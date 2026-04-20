@@ -1,0 +1,238 @@
+/* =========================
+   BACKGROUND (FACE SCAN CINEMATIC)
+========================= */
+.login-bg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1581090700227-4c4f50b5d6a6");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: zoomBg 18s ease-in-out infinite alternate;
+}
+
+/* =========================
+   SCAN LINE EFFECT
+========================= */
+.login-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    rgba(0,255,150,0.05) 0px,
+    rgba(0,255,150,0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+.login-right {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* =========================
+   GLASS LOGIN CARD
+========================= */
+.login-card {
+  width: 100%;
+  padding: 28px 26px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+  animation: fadeUp 0.6s ease;
+}
+
+/* =========================
+   FORCE WHITE TEXT
+========================= */
+.login-card,
+.login-card * {
+  color: #fff;
+}
+
+/* =========================
+   PREMIUM HEADLINE SECTION
+========================= */
+.ll-title {
+  display: block;
+  font-size: 35px;
+  margin-bottom: 12px;
+  color: #a5f3c7;
+  letter-spacing: 1px;
+}
+
+.ll-headline h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Gradient glowing text */
+.highlight {
+  background: linear-gradient(90deg, #20c05c, #00ffa6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 12px rgba(32,192,92,0.4);
+
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+.ll-headline h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Quote */
+.quote {
+  font-size: 13px;
+  margin-top: 6px;
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+}
+
+/* =========================
+   FORM
+========================= */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lf-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lf-group label {
+  font-size: 13px;
+}
+
+/* =========================
+   INPUT
+========================= */
+.lf-input-wrap {
+  position: relative;
+}
+
+.lf-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.8);
+}
+
+.lf-input-wrap input {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+}
+
+.lf-input-wrap input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.lf-input-wrap input:focus {
+  border-color: #20c05c;
+  background: rgba(255,255,255,0.22);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.login-btn {
+  background: linear-gradient(135deg, #20c05c, #159a45);
+  color: #fff;
+  width: 100%;
+  height: 42px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   ERROR
+========================= */
+.alert-error {
+  font-size: 12px;
+  color: #ff6b6b;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomBg {
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 110%;
+  }
+}
+
+/* Glow animation */
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 6px rgba(32,192,92,0.3);
+  }
+  to {
+    text-shadow: 0 0 18px rgba(32,192,92,0.8);
+  }
+}

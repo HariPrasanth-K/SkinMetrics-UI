@@ -1,0 +1,33 @@
+.sidebar{
+  position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;
+  background:var(--white);border-right:1.5px solid var(--border);
+  display:flex;flex-direction:column;padding:20px 14px;z-index:100;
+  box-shadow:2px 0 16px rgba(22,163,74,.05);
+}
+
+.sb-logo{display:flex;align-items:center;gap:11px;padding:6px 8px 22px;border-bottom:1.5px solid var(--border);margin-bottom:20px;}
+.sb-logo-icon{width:40px;height:40px;background:var(--g600);border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 3px 12px rgba(22,163,74,.35);flex-shrink:0;}
+.sb-logo-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--text1);}
+.sb-logo-sub{font-size:10px;color:var(--g500);letter-spacing:.06em;margin-top:1px;}
+
+.sb-section{font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--text4);padding:0 10px;margin-bottom:6px;}
+
+.sb-nav{display:flex;flex-direction:column;gap:3px;}
+
+.sb-item{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r-sm);
+  background:transparent;color:var(--text3);font-size:13px;font-weight:500;
+  transition:all .18s;cursor:pointer;text-align:left;position:relative;
+}
+.sb-item:hover{background:var(--g50);color:var(--g700);}
+.sb-item.active{background:var(--g50);color:var(--g700);font-weight:600;}
+.sb-icon{display:flex;align-items:center;}
+.sb-active-bar{position:absolute;right:0;top:20%;height:60%;width:3px;background:var(--g500);border-radius:99px 0 0 99px;}
+
+.sb-user{display:flex;align-items:center;gap:9px;padding:11px 10px;background:var(--g50);border-radius:var(--r-sm);border:1.5px solid var(--border);}
+.sb-avatar{width:34px;height:34px;border-radius:50%;background:var(--g500);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0;}
+.sb-user-info{flex:1;min-width:0;}
+.sb-user-name{font-size:13px;font-weight:600;color:var(--text1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sb-user-role{font-size:10px;color:var(--g600);margin-top:1px;}
+.sb-logout{background:transparent;color:var(--text4);padding:5px;border-radius:7px;display:flex;align-items:center;transition:all .18s;}
+.sb-logout:hover{background:var(--g100);color:var(--red);}
